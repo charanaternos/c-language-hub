@@ -1,44 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>C Learning Hub</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Focus Study Space | C Learning Hub</title>
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:#000;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;padding:32px 20px}
-main{max-width:640px;margin:0 auto}
-h1{font-size:1.8rem;margin:0 0 6px}
-p.sub{color:#aaa;margin:0 0 28px}
-h2{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#888;margin:28px 0 10px}
-a.btn{display:block;background:transparent;color:#fff;border:1.5px solid #fff;border-radius:12px;padding:14px 18px;margin-bottom:10px;text-decoration:none;font-size:1rem;transition:background .15s,color .15s}
-a.btn small{display:block;color:#999;font-size:.8rem;margin-top:3px}
-a.btn:hover,a.btn:focus-visible{background:rgba(255,255,255,.12);outline:none}
-a.btn:active{background:rgba(255,255,255,.22)}
+:root{color-scheme:light;--bg:#f9f8f4;--ink:#1f2421;--muted:#6b716c;--card:#fff;--line:#dfe3dd;--sage:#86967a}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#161a17;--ink:#eceee8;--muted:#9aa29b;--card:#1f2521;--line:#3a433c;--sage:#8fa383}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 6%;border-bottom:1px solid var(--line)}nav a{color:var(--ink);text-decoration:none;margin-right:22px}.cta,.search button{background:var(--sage);color:#fff;border:0;border-radius:7px;padding:11px 18px;font-weight:700}
+.hero{text-align:center;padding:72px 20px 55px}.hero h1{font-size:clamp(2.4rem,8vw,4.4rem);line-height:1.05;margin:0 0 14px}.hero p{color:var(--muted)}
+.wrap{max-width:900px;margin:auto;padding:0 20px 60px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}.search{display:flex;gap:10px}.search input{flex:1;min-width:0;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:13px;font:inherit}.hint{color:var(--muted);font-size:.85rem}.results{display:none;margin-top:16px}.results a{display:block;color:var(--ink);padding:8px 0}
+.sec{margin-top:38px}.sec h2{color:var(--muted);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.btn{position:relative;display:block;padding:15px 18px;background:var(--card);color:var(--ink);text-decoration:none;border:1px solid var(--line);border-left:4px solid var(--c,var(--sage));border-radius:10px;transition:transform .15s}.btn:hover{transform:translateY(-2px)}.btn small{display:block;color:var(--muted);margin-top:3px}.lvl{display:inline-block;color:#fff;background:var(--c,var(--sage));border-radius:99px;padding:2px 8px;font-size:.65rem;font-weight:700;text-transform:uppercase}
+footer{text-align:center;color:var(--muted);margin-top:45px}
 </style>
 </head>
 <body>
-<main>
-<h1>C Learning Hub</h1>
-<p class="sub">Every site from zero to advanced, in one place.</p>
-
-<h2>Learn</h2>
-<a class="btn" href="https://cs50.harvard.edu/x" target="_blank" rel="noopener">CS50x<small>Full course with problem sets</small></a>
-<a class="btn" href="https://www.learn-c.org" target="_blank" rel="noopener">learn-c.org<small>Interactive beginner exercises</small></a>
-<a class="btn" href="https://beej.us/guide/bgc/" target="_blank" rel="noopener">Beej’s Guide to C<small>Free guide, pointers and memory</small></a>
-
-<h2>Practice</h2>
-<a class="btn" href="https://exercism.org/tracks/c" target="_blank" rel="noopener">Exercism (C track)<small>Practice problems with feedback</small></a>
-<a class="btn" href="https://www.hackerrank.com/domains/c" target="_blank" rel="noopener">HackerRank (C)<small>Extra practice and interview prep</small></a>
-<a class="btn" href="https://leetcode.com" target="_blank" rel="noopener">LeetCode<small>Algorithm practice</small></a>
-<a class="btn" href="https://codeforces.com" target="_blank" rel="noopener">Codeforces<small>Competitive programming</small></a>
-<a class="btn" href="https://adventofcode.com" target="_blank" rel="noopener">Advent of Code<small>Yearly puzzles</small></a>
-
-<h2>Reference</h2>
-<a class="btn" href="https://en.cppreference.com/w/c" target="_blank" rel="noopener">cppreference (C)<small>Standard library reference</small></a>
-<a class="btn" href="https://man7.org/linux/man-pages/" target="_blank" rel="noopener">man7.org<small>Linux and POSIX man pages</small></a>
+<nav><div><a href="#read">Read</a><a href="#search">Search</a><a href="#books">Books</a></div><a class="cta" href="#read">Start Reading</a></nav>
+<header class="hero"><h1>Focus Study Space</h1><p>An immersive reading and learning environment for C</p></header>
+<main class="wrap">
+<section id="search" class="card"><div class="search"><input id="q" placeholder="Search any C topic: pointers, malloc, structs"><button id="go">Search</button></div><p class="hint">Find the topic across trusted C learning sources.</p><div id="results" class="results"></div></section>
+<section id="books" class="sec" style="--c:#c9a45c"><h2>Core Books: Beginner to Advanced</h2><div class="grid">
+<a class="btn" href="https://www.amazon.in/s?k=Let+Us+C+Yashavant+Kanetkar" target="_blank" rel="noopener"><span class="lvl">Beginner</span><br>Let Us C<small>Yashavant Kanetkar</small></a>
+<a class="btn" href="https://www.amazon.in/s?k=Programming+in+ANSI+C+Balagurusamy" target="_blank" rel="noopener"><span class="lvl">Intermediate</span><br>Programming in ANSI C<small>E. Balagurusamy</small></a>
+<a class="btn" href="https://www.amazon.in/s?k=The+C+Programming+Language+Kernighan+Ritchie" target="_blank" rel="noopener"><span class="lvl">Advanced</span><br>The C Programming Language<small>Kernighan and Ritchie</small></a>
+</div></section>
+<div id="read"></div>
+<section class="sec"><h2>Learn</h2><div class="grid">
+<a class="btn" href="https://cs50.harvard.edu/x" target="_blank" rel="noopener">CS50x<small>Full course with problem sets</small></a><a class="btn" href="https://www.learn-c.org" target="_blank" rel="noopener">learn-c.org<small>Interactive beginner exercises</small></a><a class="btn" href="https://beej.us/guide/bgc/" target="_blank" rel="noopener">Beej’s Guide to C<small>Free guide, pointers and memory</small></a>
+</div></section>
+<section class="sec" style="--c:#7d9bb0"><h2>Practice</h2><div class="grid">
+<a class="btn" href="https://exercism.org/tracks/c" target="_blank" rel="noopener">Exercism (C track)<small>Practice with feedback</small></a><a class="btn" href="https://www.hackerrank.com/domains/c" target="_blank" rel="noopener">HackerRank (C)<small>Interview preparation</small></a><a class="btn" href="https://leetcode.com" target="_blank" rel="noopener">LeetCode<small>Algorithm practice</small></a><a class="btn" href="https://codeforces.com" target="_blank" rel="noopener">Codeforces<small>Competitive programming</small></a><a class="btn" href="https://adventofcode.com" target="_blank" rel="noopener">Advent of Code<small>Yearly puzzles</small></a>
+</div></section>
+<section class="sec" style="--c:#9d86a8"><h2>Reference</h2><div class="grid"><a class="btn" href="https://en.cppreference.com/w/c" target="_blank" rel="noopener">cppreference (C)<small>Standard library reference</small></a><a class="btn" href="https://man7.org/linux/man-pages/" target="_blank" rel="noopener">man7.org<small>Linux and POSIX man pages</small></a></div></section>
+<section class="sec" style="--c:#c08f7a"><h2>Free PDFs: Learning</h2><div class="grid"><a class="btn" href="http://cslibrary.stanford.edu/101/EssentialC.pdf" target="_blank" rel="noopener">Essential C (PDF)<small>Stanford overview</small></a><a class="btn" href="https://beej.us/guide/bgc/pdf/bgc_usl_c_1.pdf" target="_blank" rel="noopener">Beej’s Guide to C (PDF)<small>Beginner to intermediate</small></a><a class="btn" href="https://inria.hal.science/hal-02383654/document" target="_blank" rel="noopener">Modern C (PDF)<small>Advanced C</small></a><a class="btn" href="https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.pdf" target="_blank" rel="noopener">GNU C Reference Manual<small>Language reference</small></a></div></section>
+<section class="sec" style="--c:#c98fa0"><h2>Free PDFs: Pointers and Data Structures</h2><div class="grid"><a class="btn" href="http://cslibrary.stanford.edu/102/PointersAndMemory.pdf" target="_blank" rel="noopener">Pointers and Memory<small>Stanford pointer guide</small></a><a class="btn" href="http://cslibrary.stanford.edu/103/LinkedListBasics.pdf" target="_blank" rel="noopener">Linked List Basics<small>Stanford</small></a></div></section>
+<section class="sec" style="--c:#8b8fb8"><h2>Free PDFs: Advanced and Systems</h2><div class="grid"><a class="btn" href="https://www.gnu.org/software/libc/manual/pdf/libc.pdf" target="_blank" rel="noopener">GNU C Library Manual<small>Complete libc reference</small></a><a class="btn" href="https://beej.us/guide/bgnet/pdf/bgnet_usl_c_1.pdf" target="_blank" rel="noopener">Beej’s Network Programming<small>Sockets in C</small></a><a class="btn" href="https://gcc.gnu.org/onlinedocs/gcc.pdf" target="_blank" rel="noopener">GCC Manual<small>Compiler options</small></a></div></section>
+<section class="sec" style="--c:#7fa58f"><h2>Official Standards</h2><div class="grid"><a class="btn" href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf" target="_blank" rel="noopener">C11 Standard Draft<small>N1570 specification</small></a><a class="btn" href="https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1256.pdf" target="_blank" rel="noopener">C99 Standard Draft<small>N1256 specification</small></a></div></section>
+<section class="sec" style="--c:#c9a45c"><h2>Indian Books</h2><div class="grid"><a class="btn" href="https://www.amazon.in/s?k=Understanding+Pointers+in+C+Kanetkar" target="_blank" rel="noopener">Understanding Pointers in C<small>Yashavant Kanetkar</small></a><a class="btn" href="https://www.amazon.in/s?k=Programming+in+C+Reema+Thareja" target="_blank" rel="noopener">Programming in C<small>Reema Thareja</small></a><a class="btn" href="https://www.amazon.in/s?k=Exploring+C+Yashavant+Kanetkar" target="_blank" rel="noopener">Exploring C<small>Yashavant Kanetkar</small></a></div></section>
+<section class="sec" style="--c:#6fa8b5"><h2>Indian Free Courses</h2><div class="grid"><a class="btn" href="https://nptel.ac.in" target="_blank" rel="noopener">NPTEL<small>IIT courses</small></a><a class="btn" href="https://spoken-tutorial.org" target="_blank" rel="noopener">Spoken Tutorial<small>IIT Bombay C tutorials</small></a></div></section>
+<footer>Learn slowly, build often.</footer>
 </main>
+<script>
+const sources=[['Beej’s Guide to C','beej.us/guide/bgc'],['Stanford C Library','cslibrary.stanford.edu'],['Modern C','gustedt.gitlabpages.inria.fr/modern-c'],['cppreference','en.cppreference.com/w/c'],['CS50','cs50.harvard.edu/x'],['learn-c.org','learn-c.org']];
+function search(){const q=document.querySelector('#q').value.trim(),r=document.querySelector('#results');if(!q)return;r.style.display='block';r.innerHTML='<strong>Search “'+q.replace(/[&<>"']/g,'')+'” in trusted sources:</strong>'+sources.map(s=>'<a target="_blank" rel="noopener" href="https://www.google.com/search?q='+encodeURIComponent(q+' C programming site:'+s[1])+'">'+s[0]+' →</a>').join('')}
+document.querySelector('#go').onclick=search;document.querySelector('#q').onkeydown=e=>{if(e.key==='Enter')search()};
+</script>
 </body>
 </html>
